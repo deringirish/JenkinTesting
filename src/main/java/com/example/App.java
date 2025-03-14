@@ -1,25 +1,31 @@
 package com.example;
 
+
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in);
         
-        for (int i = 1; i <= 10; i++) {
-            System.out.println("Line " + i);
-        }
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        
+        System.out.println("Hello, " + name + "!");
         
         int sum = 0;
         for (int i = 1; i <= 5; i++) {
             sum += i;
-            System.out.println("Sum after adding " + i + " is: " + sum);
+            System.out.println("Adding " + i + " to sum. Current sum: " + sum);
         }
         
         System.out.println("Final Sum: " + sum);
         
-        if (sum > 10) {
-            System.out.println("The sum is greater than 10");
+        if (sum % 2 == 0) {
+            System.out.println("The sum is even.");
         } else {
-            System.out.println("The sum is 10 or less");
+            System.out.println("The sum is odd.");
         }
+        
+        scanner.close();
     }
 }
