@@ -96,9 +96,9 @@ class Library {
 }
 
 public class App {
-    private Library library
-    private JFrame frame
-    private DefaultListModel<String> bookListModel
+    private Library library;
+    private JFrame frame;
+    private DefaultListModel<String> bookListModel;
     private JList<String> bookList;
 
     public App() {
