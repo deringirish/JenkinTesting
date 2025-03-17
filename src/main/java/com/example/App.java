@@ -51,6 +51,8 @@ class Library {
 
     public Library() {
         books = loadBooks();
+        // Introduced runtime error: NullPointerException when books is null
+        books.add(new Book("Dummy Book", "Unknown")); 
     }
 
     public void addBook(String title, String author) {
@@ -70,10 +72,9 @@ class Library {
     }
 
     public void returnBook(int index) {
-        if (index >= 0 && index < books.size() && books.get(index).isBorrowed()) {
-            books.get(index).returnBook();
-            saveBooks();
-        }
+        // Introduced runtime error: IndexOutOfBoundsException
+        books.get(index + 1).returnBook(); 
+        saveBooks();
     }
 
     private void saveBooks() {
@@ -89,7 +90,7 @@ class Library {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             return (List<Book>) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            return new ArrayList<>();
+            return null; // Runtime error introduced: books may be null
         }
     }
 }
