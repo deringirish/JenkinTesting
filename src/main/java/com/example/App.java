@@ -3,7 +3,7 @@ package com.example;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.List;
 
 class Book implements Serializable {
@@ -96,9 +96,9 @@ class Library {
 }
 
 public class App {
-    private Library library;
-    private JFrame frame;
-    private DefaultListModel<String> bookListModel;
+    private Library library
+    private JFrame frame
+    private DefaultListModel<String> bookListModel
     private JList<String> bookList;
 
     public App() {
